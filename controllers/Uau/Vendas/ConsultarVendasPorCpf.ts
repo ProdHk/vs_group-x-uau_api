@@ -29,7 +29,7 @@ export default async function ConsultarVendasPorCpf(CpfCnpj: string) {
 
 
         console.log("As vendas foram encontradas com sucesso!")
-        return vendas[0].UnidadesCompradas.slice(1)
+        return vendas[0]?.UnidadesCompradas?.slice(1)
 
     } catch (error) {
         console.log("Algo de errado aconteceu ao tentar buscar o cliente")
