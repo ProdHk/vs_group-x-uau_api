@@ -21,7 +21,7 @@ export default function Header() {
         <header className="w-full bg-white shadow-md">
             <div className="container mx-auto flex items-center justify-between p-4">
                 {/* Logo */}
-                <h1 className="text-lg font-semibold text-gray-800">Minha Empresa</h1>
+                <h1 className="text-lg font-semibold text-gray-800">Área do cliente</h1>
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex gap-6">
