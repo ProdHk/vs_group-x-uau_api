@@ -25,7 +25,7 @@ export default async function LoginCliente({ cpf, email }: LoginTypes) {
             nome: cliente?.nome_pes,
             cpf: cpf,
             email: email,
-            id: cliente?.cod_pes
+            id: cliente?.cod_pes,
         }
 
         return { status: true, message: "Autenticado com sucesso!", user }
