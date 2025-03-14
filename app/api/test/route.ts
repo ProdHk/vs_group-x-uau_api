@@ -1,5 +1,7 @@
 import BuscarParcelasECobranca from "@/controllers/Uau/Recebiveis/BuscarParcelasECobranca";
+/* 
 import BuscarClientesInadimplentes from "@/services/inadimplencia/BuscarClientesInadimplentes";
+*/
 import { NextRequest, NextResponse } from "next/server";
 
 
