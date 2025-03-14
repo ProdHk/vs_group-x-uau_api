@@ -113,7 +113,7 @@ export default function SegundaViaBoleto() {
 
     console.log(boletos)
     return (
-        <div className="min-h-screen bg-gray-900 text-white flex justify-center py-10">
+        <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center py-10">
             <div className="w-full max-w-5xl px-4">
                 <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
                     Segunda Via de Boleto
@@ -160,9 +160,9 @@ export default function SegundaViaBoleto() {
                     </table>
                 </div>
 
-                <div className="mt-6 text-right">
+                {/* <div className="mt-6 text-right">
                     <span className="text-lg font-semibold">Total pendente: R$ 950,00</span>
-                </div>
+                </div> */}
             </div>
         </div>
     );

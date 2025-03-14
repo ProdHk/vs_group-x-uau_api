@@ -43,7 +43,7 @@ export default function ExtratoFinanceiro() {
     ];
     return (
 
-        <div className="min-h-screen bg-gray-900 text-white flex justify-center py-10">
+        <div className="min-h-screen w-full  bg-gray-900 text-white flex justify-center py-10">
             <div className="w-full max-w-5xl px-4">
                 <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent">
                     Extrato Financeiro

@@ -2,7 +2,7 @@
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-gray-900 text-white flex justify-center items-center py-8">
+        <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center items-center py-8">
             <div className="w-full max-w-5xl px-6">
                 <h1 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">
                     Portal do Cliente J.Lemara
