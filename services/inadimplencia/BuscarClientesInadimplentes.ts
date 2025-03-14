@@ -1,23 +1,24 @@
 
-
+/* 
 import BuscarBoletosClienteEspecifico from "@/controllers/Uau/Boleto/BuscarBoletosClienteEspecifico"
 import BuscarClientePorId from "@/controllers/Uau/Cliente/BuscarClientePorId"
 import BuscarClientesComVenda from "@/controllers/Uau/Cliente/BuscarClientesComVenda"
 import ConsultarVendasPorCpf from "@/controllers/Uau/Vendas/ConsultarVendasPorCpf"
-
+ */
 export default async function BuscarClientesInadimplentes() {
 
     try {
 
 
-        let clientesComVendasAtivas: any = []
-        let vendasInadimplentes: any = []
+/*         let clientesComVendasAtivas: any = []
+ */        const vendasInadimplentes = ''
 
 
 
         // Busca os clientes que possuem vendas
-        const clientesComVendas = await BuscarClientesComVenda().then((res) => res)
-        /* const clientesComVendas = [
+        /*         const clientesComVendas = await BuscarClientesComVenda().then((res) => res)
+         */
+        const clientesComVendas = [
             {
                 "Cod_pes": 21655,
                 "Nome_pes": "JULIO GOMES DE SOUSA",
@@ -108,7 +109,7 @@ export default async function BuscarClientesInadimplentes() {
                 "Nome_pes": "FERNANDA DE OLIVEIRA SOUZA SILVA",
                 "NomeFant_Pes": "FERNANDA DE OLIVEIRA SOUZA SILVA"
             },
-        ] */
+        ]
 
 
         if (!clientesComVendas) {
@@ -118,50 +119,50 @@ export default async function BuscarClientesInadimplentes() {
 
 
         // RESPONSAVEL POR AGRUPAR INFO DO CLIENTE
-        for (const cliente of clientesComVendas) {
-
-            const infoCliente: any = await BuscarClientePorId({ codigo_pessoa: cliente.Cod_pes })
-
-            // BUSCANDO INFORMAÇÕES DA VENDA
-
-            await ConsultarVendasPorCpf(infoCliente.cpf_pes).then((res) => res.filter((venda: { Status_Ven: number }) => Number(venda.Status_Ven) === 0).map(async (venda: any) => {
-
-                const parcelas = await BuscarBoletosClienteEspecifico({ codPessoa: infoCliente.cod_pes, naoMostraBoletoVencido: false })
-
-                let parcelasVencidas: any = []
-
-                parcelas?.map((parcela) => {
-
-                    if (new Date(parcela.dataVencimento) < new Date()) {
-                        parcelasVencidas.push(parcela);
-                    }
-
-                })
-
-
-                vendasInadimplentes.push({
-                    nome: infoCliente.nome_pes,
-                    id: infoCliente.cod_pes,
-                    cpf: String(infoCliente.cpf_pes),
-                    venda: {
-                        empresa: venda.Empresa_ven,
-                        obra: venda.Obra_Ven,
-                        numVenda: venda.Num_Ven,
-                        statusVenda: venda.Status_Ven,
-                    },
-                    parcelasVencidas
-                })
-
-            }))
-
-
-
-
-
-
-        }
-
-
+        // BUSCANDO INFORMAÇÕES DA VENDA
+        /*         for (const cliente of clientesComVendas) {
+        
+                    const infoCliente: any = await BuscarClientePorId({ codigo_pessoa: cliente.Cod_pes })
+        
+        
+                    await ConsultarVendasPorCpf(infoCliente.cpf_pes).then((res) => res.filter((venda: { Status_Ven: number }) => Number(venda.Status_Ven) === 0).map(async (venda: any) => {
+        
+                        const parcelas = await BuscarBoletosClienteEspecifico({ codPessoa: infoCliente.cod_pes, naoMostraBoletoVencido: false })
+        
+                        let parcelasVencidas: any = []
+        
+                        parcelas?.map((parcela) => {
+        
+                            if (new Date(parcela.dataVencimento) < new Date()) {
+                                parcelasVencidas.push(parcela);
+                            }
+        
+                        })
+        
+        
+                        vendasInadimplentes.push({
+                            nome: infoCliente.nome_pes,
+                            id: infoCliente.cod_pes,
+                            cpf: String(infoCliente.cpf_pes),
+                            venda: {
+                                empresa: venda.Empresa_ven,
+                                obra: venda.Obra_Ven,
+                                numVenda: venda.Num_Ven,
+                                statusVenda: venda.Status_Ven,
+                            },
+                            parcelasVencidas
+                        })
+        
+                    }))
+        
+        
+        
+        
+        
+        
+                }
+        
+         */
 
         return vendasInadimplentes
     } catch (error) {
