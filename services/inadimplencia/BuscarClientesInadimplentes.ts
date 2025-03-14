@@ -121,10 +121,7 @@ export default async function BuscarClientesInadimplentes() {
         // RESPONSAVEL POR AGRUPAR INFO DO CLIENTE
         // BUSCANDO INFORMAÇÕES DA VENDA
         /*         for (const cliente of clientesComVendas) {
-        
-                    const infoCliente: any = await BuscarClientePorId({ codigo_pessoa: cliente.Cod_pes })
-        
-        
+                            const infoCliente: any = await BuscarClientePorId({ codigo_pessoa: cliente.Cod_pes })      
                     await ConsultarVendasPorCpf(infoCliente.cpf_pes).then((res) => res.filter((venda: { Status_Ven: number }) => Number(venda.Status_Ven) === 0).map(async (venda: any) => {
         
                         const parcelas = await BuscarBoletosClienteEspecifico({ codPessoa: infoCliente.cod_pes, naoMostraBoletoVencido: false })
@@ -153,13 +150,7 @@ export default async function BuscarClientesInadimplentes() {
                             parcelasVencidas
                         })
         
-                    }))
-        
-        
-        
-        
-        
-        
+                    }))        
                 }
         
          */

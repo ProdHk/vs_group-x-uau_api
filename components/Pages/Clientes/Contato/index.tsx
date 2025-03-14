@@ -55,9 +55,10 @@ export default function FaleConosco() {
                     <div className="mt-8">
                         <h2 className="text-xl font-bold mb-2">Outras formas de contato</h2>
                         <ul className="text-gray-400">
-                            <li>📞 Telefone: (31) 99999-9999</li>
-                            <li>📧 E-mail: atendimento@jlemara.com.br</li>
-                            <li>📍 Endereço: Rua Principal, 123 - Mateus Leme, MG</li>
+                            <li>📞 Telefone: (31) 3272-0333</li>
+                            <li>📲 WhatsApp: (31) 99999-3000</li>
+                            <li>📧 E-mail: jlemara@jlemara.com.br</li>
+                            <li>📍 Endereço: Rua Rio de Janeiro, 300 - Centro, MG</li>
                         </ul>
                     </div>
                 </div>
