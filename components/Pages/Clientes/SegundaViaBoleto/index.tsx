@@ -49,7 +49,7 @@ export default function SegundaViaBoleto() {
         }
 
         getData()
-    }, [])
+    }, [codPessoa])
 
     const handleDownloadBoleto = async ({ codBanco, seuNumero }: Boleto) => {
         try {
