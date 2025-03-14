@@ -13,6 +13,8 @@ interface Boleto {
 export default async function BaixarBoleto({ cod_banco, seu_numero, ocultar_dados_pessoais }: Boleto) {
     try {
 
+        console.log("Iniciando req para baixar boleto")
+
         let boleto
 
         const API_KEY = process.env.API_KEY || '';
