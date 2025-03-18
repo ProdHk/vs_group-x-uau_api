@@ -1,4 +1,6 @@
 import BuscarParcelasECobranca from "@/controllers/Uau/Recebiveis/BuscarParcelasECobranca";
+import BuscarParcelasAReceber from "@/controllers/Uau/Vendas/BuscarParcelasAReceber";
+import BuscarClientesDistratoCancelamento from "@/services/inadimplencia/BuscarClientesDistratoCancelamento";
 /* 
 import BuscarClientesInadimplentes from "@/services/inadimplencia/BuscarClientesInadimplentes";
 */
@@ -16,6 +18,23 @@ export async function POST(req: NextRequest) {
         const DataFimVencimento = body.DataFimVencimento
         const PesquisarPorNaoTitulares = body.PesquisarPorNaoTitulares
         const response = await BuscarParcelasECobranca({ Cpf, ValorReajustado, QtdParcelas, DataInicioVencimento, DataFimVencimento, PesquisarPorNaoTitulares })
+
+        return NextResponse.json({ msg: "All rigth", response })
+    } catch (error) {
+
+        return NextResponse.json({ msg: "All bad", error })
+    }
+}
+
+
+
+
+export async function PUT(req: NextRequest) {
+
+    try {
+        const body = await req.json()
+
+        const response = await BuscarClientesDistratoCancelamento()
 
         return NextResponse.json({ msg: "All rigth", response })
     } catch (error) {
