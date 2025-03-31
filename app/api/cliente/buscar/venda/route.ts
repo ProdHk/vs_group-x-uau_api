@@ -27,7 +27,6 @@ export async function PUT(req: NextRequest) {
         const CodigoPessoa = request.CodigoPessoa
         const CpfCnpj = request.CpfCnpj
         const response = await BuscarUnidadesDoCliente({ CodigoPessoa, CpfCnpj })
-        console.log(response)
 
         return NextResponse.json({ message: "Vendas encontradas", unidades: response })
     } catch (error) {

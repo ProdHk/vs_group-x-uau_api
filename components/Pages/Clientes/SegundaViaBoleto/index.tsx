@@ -59,7 +59,6 @@ export default function SegundaViaBoleto() {
                 ocultar_dados_pessoais: false
             });
 
-            console.log("Resposta do servidor:", response);
 
             // Verificar se `response` é um objeto JSON com a chave correta
             const base64String = response.base64 || response.data || response; // Ajuste conforme necessário
@@ -69,7 +68,6 @@ export default function SegundaViaBoleto() {
                 return;
             }
 
-            console.log("Base64 recebido:", base64String);
             baixarArquivoPDF(base64String, Number(seuNumero));
 
         } catch (error) {
@@ -111,7 +109,6 @@ export default function SegundaViaBoleto() {
 
 
 
-    console.log(boletos)
     return (
         <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center py-10">
             <div className="w-full max-w-5xl px-4">
@@ -138,7 +135,6 @@ export default function SegundaViaBoleto() {
                                     return
                                 }
                                 const boletoVencido = new Date(boleto.dataVencimento) < new Date() ? true : false
-                                console.log(boletoVencido)
                                 return <tr
                                     key={boleto.seuNumero}
                                     className={`border-b border-gray-700 ${boletoVencido === true ? 'text-red-400' : 'text-green-300'}`}

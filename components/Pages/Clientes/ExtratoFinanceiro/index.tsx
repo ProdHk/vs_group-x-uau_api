@@ -31,7 +31,6 @@ export default function ExtratoFinanceiro() {
         getData()
     }, [])
 
-    console.log(resumoContrato)
 
     const pagamentos = [
         { data: 'Jan', valor: 450 },

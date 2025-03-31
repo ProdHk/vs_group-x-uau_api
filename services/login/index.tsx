@@ -10,7 +10,6 @@ interface LoginTypes {
 export default async function LoginCliente({ cpf, email }: LoginTypes) {
     try {
         const cliente = await BuscarClientePorCPF({ cpf_cnpj: cpf });
-        console.log(cliente);
 
         if (!cliente) {
             return { status: false, message: "O EMAIL ou SENHA informados não são válidos" };
