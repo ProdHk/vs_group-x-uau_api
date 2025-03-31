@@ -1,9 +1,5 @@
 import BuscarParcelasECobranca from "@/controllers/Uau/Recebiveis/BuscarParcelasECobranca";
-import BuscarParcelasAReceber from "@/controllers/Uau/Vendas/BuscarParcelasAReceber";
 import BuscarClientesDistratoCancelamento from "@/services/inadimplencia/BuscarClientesDistratoCancelamento";
-/* 
-import BuscarClientesInadimplentes from "@/services/inadimplencia/BuscarClientesInadimplentes";
-*/
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -32,7 +28,6 @@ export async function POST(req: NextRequest) {
 export async function PUT(req: NextRequest) {
 
     try {
-        const body = await req.json()
 
         const response = await BuscarClientesDistratoCancelamento()
 
