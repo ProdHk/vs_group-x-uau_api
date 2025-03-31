@@ -3,6 +3,7 @@
 import BuscarClientePorId from "@/controllers/Uau/Cliente/BuscarClientePorId";
 import BuscarClientesComVenda from "@/controllers/Uau/Cliente/BuscarClientesComVenda";
 import BuscarParcelasECobranca from "@/controllers/Uau/Recebiveis/BuscarParcelasECobranca";
+import ClienteTypes from "@/types/ClienteTypes";
 
 export default async function BuscarClientesDistratoCancelamento() {
     try {
@@ -18,7 +19,7 @@ export default async function BuscarClientesDistratoCancelamento() {
 
         // Buscar dados dos clientes em paralelo
         const clientesDetalhados = await Promise.all(
-            clientesComVendaAtiva.map(cliente =>
+            clientesComVendaAtiva.map((cliente: ClienteTypes) =>
                 BuscarClientePorId({ codigo_pessoa: cliente.Cod_pes }).catch(() => null)
             )
         );
